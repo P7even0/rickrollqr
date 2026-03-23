@@ -31,7 +31,7 @@ When the user submits a URL:
 The QR code image is generated using the QuickChart QR endpoint.
 
 <img width="2828" height="1452" alt="image" src="https://github.com/user-attachments/assets/18650291-730c-4416-a5a5-381f6ef6af1b" />
-![Uploading image.png…]()
+
 
 
 ## Run Locally
