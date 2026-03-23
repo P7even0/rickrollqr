@@ -1,75 +1,84 @@
-# React + TypeScript + Vite
+# RickRoll QR Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly professional web application for generating trustworthy QR codes that definitely do not lead to Rick Astley.
 
-Currently, two official plugins are available:
+Built with React, TypeScript, and Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Generates QR codes from user input
+- If the submitted URL is already one of the known Rickroll variants, it uses that exact link
+- Otherwise, it swaps the input for a random Rickroll variant from an internal list
+- Animated Rick Astley decorations that grow when the QR code is generated
+- No backend required
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Tech Stack
 
-Note: This will impact Vite dev & build performances.
+- React
+- TypeScript
+- Vite
+- QuickChart QR API
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<img width="2864" height="1484" alt="image" src="https://github.com/user-attachments/assets/0560ecc3-ded4-41e8-ae0b-c6a6658b58e5" />
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+When the user submits a URL:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- if the URL matches one of the Rickroll links stored in the app, the QR code is generated for that exact link
+- otherwise, the app randomly picks a Rickroll variant from the internal list and generates a QR code for that instead
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The QR code image is generated using the QuickChart QR endpoint.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<img width="2828" height="1452" alt="image" src="https://github.com/user-attachments/assets/18650291-730c-4416-a5a5-381f6ef6af1b" />
+![Uploading image.png…]()
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Run Locally
+
+Clone the repository:
+
+    git clone https://github.com/your-username/rickroll-qr-generator.git
+    cd rickroll-qr-generator
+
+Install dependencies:
+
+    npm install
+
+Start the development server:
+
+    npm run dev
+
+## Build for Production
+
+    npm run build
+
+## Project Structure
+
+    src/
+      assets/
+        dance1.gif
+        dance2.gif
+        headgif.gif
+        descarga.jpeg
+      App.tsx
+      App.css
+      index.css
+
+## Notes
+
+This project was made as a small joke project and front-end experiment.
+
+Before publishing publicly, make sure that:
+
+- you are not committing any secrets or private information
+- the images and GIFs you use are okay to upload publicly
+- the repository is cleaned up enough to look intentional
+
+## Disclaimer
+
+This project is meant as a joke. Use responsibly.
+
+## License
+
+MIT
